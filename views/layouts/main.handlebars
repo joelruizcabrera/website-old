@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{#each meta}}
+        {{{this.metaTag}}}
+    {{/each}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{pageName}} - {{author}}</title>
+    {{#each styles}}
+        <link rel="stylesheet" href="{{this.url}}">
+    {{/each}}
+</head>
+<body class="{{pageName}}">
+<div class="navigation">
+    <ul>
+        <li><img alt="{{author}} Logo" src=""></li>
+        {{#each pages}}
+            <li>
+                <a class="{{this.options.pageName}}" href="{{this.route}}">
+                    {{this.options.pageName}}
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+{{{body}}}
+
+{{#each scripts}}
+    <script src="{{this.url}}"></script>
+{{/each}}
+</body>
+</html>

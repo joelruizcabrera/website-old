@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+body {
+    background-color: #000 !important;
+    color: #fff !important;
+    font-size: 16px !important;
+}
+
+.btn.btn-primary {
+    border-radius: 0;
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    background-color: transparent;
+    font-size: 1.3rem;
+}
+
+.btn.btn-primary:hover {
+    border: 1px solid transparent;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.carousel-caption {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.header {
+    height: 100vh;
+    position: relative;
+}
+
+#experience {
+    perspective: 800px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+}
+#lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    pointer-events: none;
+    opacity: 0.55;
+}
+
+.header-headline {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header-headline h1 {
+    font-size: 5rem;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.header-headline h3 {
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+}
+
+.navigation {
+    position: fixed;
+    backdrop-filter: blur(7px);
+    padding: 3rem;
+    z-index: 999999;
+    width: 100vw;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    transition: padding .3s ease;
+}
+
+.navigation ul {
+    display: inline-flex;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.navigation li:first-child {
+    margin-right: 3rem;
+}
+
+.navigation li {
+    list-style: none;
+    margin-right: 2rem;
+    transition: margin-right .3s ease;
+}
+
+.navigation li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sec-1 {
+    background-color: #fff;
+    color: #000;
+    min-height: 200vh;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #fff !important;
+        color: #000 !important;
+    }
+    .header {
+        background-color: #949494;
+    }
+    .navigation {
+        background: rgba(255,255,255,0.6);
+        color: #000;
+    }
+    .navigation li a {
+        color: #000;
+    }
+}
