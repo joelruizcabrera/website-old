@@ -17,7 +17,7 @@
         <li><img alt="{{author}} Logo" src=""></li>
         {{#each pages}}
             <li>
-                <a class="{{this.options.pageName}}" href="{{this.route}}">
+                <a class="{{this.options.pageName}} navi-item nav-item-{{@key}}" href="{{this.route}}">
                     {{this.options.pageName}}
                 </a>
             </li>
@@ -26,7 +26,7 @@
 </div>
 
 {{{body}}}
-
+<button class="scrollToTopBtn"><i class="fas fa-chevron-up"></i></button>
 {{#each scripts}}
     <script src="{{this.url}}"></script>
 {{/each}}

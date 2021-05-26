@@ -12,17 +12,20 @@ web.use('/assets', express.static('views/public'))
 
 web.locals.scripts = [
     {url: "https://code.jquery.com/jquery-3.6.0.min.js"},
+    {url: "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"},
     {url: "/assets/js/main.js"},
     {url: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"}
 ]
 web.locals.styles = [
     {url: "/assets/css/style.css"},
-    {url: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"}
+    {url: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"},
+    {url: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"},
+    {url: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"}
 ]
 
-web.locals.author = "John Doe";
+web.locals.author = "Joel Ruiz Cabrera";
 web.locals.email = "joel.schwegmann@gmx.de";
-var pageDescription = "asdasd";
+web.locals.pageDescription = "My name is Joel. I am a web developer and I am from Osnabrück, Germany.<br>Feel free to get inspired. ";
 
 var keywords = [
     "developer",
@@ -41,7 +44,7 @@ web.locals.meta = [
     {metaTag: '<meta name="robots" content="INDEX,FOLLOW" />'},
     {metaTag: '<meta http-equiv="content-Language" content="de" />'},
     {metaTag: '<meta http-equiv="content-Language" content="de" />'},
-    {metaTag: '<meta name="description" content="' + pageDescription +  '" />'},
+    {metaTag: '<meta name="description" content="' + web.locals.pageDescription +  '" />'},
     {metaTag: '<meta name="author" content="' + web.locals.author + '" />'},
     {metaTag: '<meta name="publisher" content="' + web.locals.author + '" />'},
     {metaTag: '<meta name="copyright" content="' + web.locals.author + '" />'},
@@ -71,6 +74,45 @@ web.locals.pages = [
 
 var workPages = require('./work.json');
 web.locals.work = workPages.work;
+
+web.locals.social = [
+    {
+        name: "Instagram",
+        icon: "fab fa-instagram",
+        username: "joelruizcabrera",
+        link: "https://instagram.com/joelruizcabrera"
+    },
+    {
+        name: "Twitter",
+        icon: "fab fa-twitter",
+        username: "joelruizcabrera",
+        link: "https://twitter.com/joelruizcabrera"
+    },
+    {
+        name: "LinkedIn",
+        icon: "fab fa-linkedin-in",
+        username: "Joel Schwegmann",
+        link: "https://www.linkedin.com/in/joel-schwegmann-6a8709199/"
+    },
+    {
+        name: "Spotify",
+        icon: "fab fa-spotify",
+        username: "Joel Ruiz Cabrera",
+        link: "https://open.spotify.com/user/31jtlnadbppxegnafrhzjpczbpya?si=9b9d709b5baf4091"
+    },
+    {
+        name: "Dribbble",
+        icon: "fab fa-dribbble",
+        username: "Joel Ruiz Cabrera",
+        link: "https://dribbble.com/yurodev"
+    },
+    {
+        name: "Discord",
+        icon: "fab fa-discord",
+        username: "Joel Ruiz Cabrera#1153",
+        link: "https://discordapp.com/users/253605920888586241"
+    }
+]
 
 for (let i = 0; i < workPages.work.length; i++) {
     web.get('/work/' + workPages.work[i].url, (req, res) => {
