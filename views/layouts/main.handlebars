@@ -1,3 +1,4 @@
+<!-- {{{copyright}}} -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,10 +28,18 @@
 
 {{{body}}}
 <button class="scrollToTopBtn"><i class="fas fa-chevron-up"></i></button>
+<div class="color-scheme-indicator">
+    <div class="dark-mode">
+        <p><i class="fas fa-moon"></i> Dark Mode</p>
+    </div>
+    <div class="light-mode" id="">
+        <p><i class="fas fa-sun"></i> Light Mode</p>
+    </div>
+</div>
 <footer>
     <div class="container-md">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 wow animate__animated animate__fadeInLeft anim-del-6">
                 <ul>
                     <li style="margin-bottom: 0"><h1>Joel Ruiz Cabrera</h1></li>
                     <li><p>Web Developer, Shopware 6, UI/UX</p></li>
@@ -39,7 +48,7 @@
                     <li>Joel Schwegmann<br>Petrusallee 16<br>49090 Osnabrück</li>
                 </ul>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 wow animate__animated animate__fadeInLeft anim-del-4">
                 <ul>
                     <li><h1>Social Media</h1></li>
                     {{#each social}}
@@ -51,12 +60,35 @@
                     {{/each}}
                 </ul>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 wow animate__animated animate__fadeInLeft anim-del-2">
                 <ul>
                     <li><h1>Law</h1></li>
+                    <li>
+                        <a href="#">Imprint</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+                    <li>
+                        -
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 wow animate__animated animate__fadeInLeft anim-del-0">
+                <ul>
+                    <li><h1>Pages</h1></li>
+                    {{#each pages}}
+                        <li>
+                            <a href="{{this.route}}">{{this.options.pageName}}</a>
+                        </li>
+                    {{/each}}
                 </ul>
             </div>
         </div>
+        <p class="footer-copyright">{{{copyright}}}</p>
     </div>
 </footer>
 {{#each scripts}}

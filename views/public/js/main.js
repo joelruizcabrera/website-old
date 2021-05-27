@@ -40,7 +40,6 @@ var experience = {
         var ctx = this.canvas.getContext('2d');
 
         var color;
-        console.log($("body").css('background-color'))
 
         let colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -189,6 +188,11 @@ var experience = {
 experience.init();
 
 $(document).ready(function() {
+    var locationHref = window.location.href.split("/")
+    console.log("Copyright \251 " + new Date().getFullYear() + " Joel Schwegmann. All Rights Reserved")
+    console.log("Imprint: " + locationHref[0] + "//" + locationHref[2] + "/imprint")
+    console.log("Privacy: " + locationHref[0] + "//" + locationHref[2] + "/privacy")
+    console.log("%cYo, get out of my console! :D", "font-size: 30px;font-weight: 900")
     $(".slider-item-0").addClass("active")
     var scroll = $(window).scrollTop();
     checkNavPos(scroll);

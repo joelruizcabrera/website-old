@@ -1,10 +1,16 @@
 const express = require('express');
 const web = express();
 const hbs = require('express-handlebars');
+const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
 
 const cfg = {
     "port": 3000
 }
+
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log', 'access.log'), { flags: 'a' })
+web.use(morgan('combined', { stream: accessLogStream }))
 
 web.engine('handlebars', hbs())
 web.set('view engine', 'handlebars')
@@ -24,6 +30,7 @@ web.locals.styles = [
 ]
 
 web.locals.author = "Joel Ruiz Cabrera";
+web.locals.copyright_author = "Joel Schwegmann";
 web.locals.email = "joel.schwegmann@gmx.de";
 web.locals.pageDescription = "My name is Joel. I am a web developer and I am from Osnabrück, Germany.<br>Feel free to get inspired. ";
 
@@ -46,14 +53,15 @@ web.locals.meta = [
     {metaTag: '<meta http-equiv="content-Language" content="de" />'},
     {metaTag: '<meta name="description" content="' + web.locals.pageDescription +  '" />'},
     {metaTag: '<meta name="author" content="' + web.locals.author + '" />'},
-    {metaTag: '<meta name="publisher" content="' + web.locals.author + '" />'},
-    {metaTag: '<meta name="copyright" content="' + web.locals.author + '" />'},
+    {metaTag: '<meta name="publisher" content="' + web.locals.copyright_author + '" />'},
+    {metaTag: '<meta name="copyright" content="' + web.locals.copyright_author + '" />'},
     {metaTag: '<meta name="audience" content="Alle" />'},
     {metaTag: '<meta http-equiv="Reply-to" content="' + web.locals.email + '" />'},
     {metaTag: '<meta name="expires" content="" />'},
 ]
 
 web.locals.meta.push({metaTag: '<meta name="keywords" content="' + keywords + '" />'})
+web.locals.copyright = "Copyright &copy; " + new Date().getFullYear() + " " + web.locals.copyright_author + ". All Rights Reserved"
 
 web.locals.pages = [
     {
@@ -69,7 +77,21 @@ web.locals.pages = [
         options: {
             pageName: "About"
         }
-    }
+    },
+    {
+        view: "work_main",
+        route: "/work",
+        options: {
+            pageName: "Work"
+        }
+    },
+    {
+        view: "work_main",
+        route: "/login",
+        options: {
+            pageName: "Login"
+        }
+    },
 ]
 
 var workPages = require('./work.json');
