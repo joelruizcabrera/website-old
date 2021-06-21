@@ -1,3 +1,30 @@
 <div class="sec-about-1" style="padding-top: 7vw">
     <h1>{{pageName}}</h1>
+    <hr>
+    <div class="container">
+        <div class="row justify-content-evenly">
+            <div class="col-4">
+                <img class="about-profile-img" loading="lazy" src="/assets/img/joel.jpg">
+            </div>
+            <div class="col-4">
+                <h2>Wuzz Up!</h2>
+                <p>My name is Joel, I am 17 years old and work as an IT specialist for application development in the Shopware 6 frontend area.</p>
+                <p>I live in Osnabrück/Germany and recently received my extended secondary school qualification with an average of 2.4.</p>
+                <p>I was already fascinated by web programming at the age of 11, which is why I quickly realized my first projects with the first programming languages I learned.</p>
+                <p>First still with a 300€ Amazon computer, which was already delivered ready, but still taught me with this toaster most of my knowledge</p>
+                <div class="about-social-media">
+                    <ul>
+                        {{#each social}}
+                        <li>
+                            <a target="_blank" href="{{this.link}}">
+                                <i class="{{this.icon}}"></i>
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <span id="shopwarePerc"></span>
+    </div>
 </div>

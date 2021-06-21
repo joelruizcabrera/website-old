@@ -63,6 +63,9 @@ web.locals.meta = [
 web.locals.meta.push({metaTag: '<meta name="keywords" content="' + keywords + '" />'})
 web.locals.copyright = "Copyright &copy; " + new Date().getFullYear() + " " + web.locals.copyright_author + ". All Rights Reserved"
 
+var workPages = require('./work.json');
+web.locals.work = workPages.work;
+
 web.locals.pages = [
     {
         view: "home",
@@ -84,18 +87,8 @@ web.locals.pages = [
         options: {
             pageName: "Work"
         }
-    },
-    {
-        view: "work_main",
-        route: "/login",
-        options: {
-            pageName: "Login"
-        }
-    },
+    }
 ]
-
-var workPages = require('./work.json');
-web.locals.work = workPages.work;
 
 web.locals.social = [
     {

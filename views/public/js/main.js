@@ -196,7 +196,6 @@ $(document).ready(function() {
     $(".slider-item-0").addClass("active")
     var scroll = $(window).scrollTop();
     checkNavPos(scroll);
-    $('.work-content').css('padding-top', $(".navigation").outerHeight() * 2)
 
     var currentPage = $("body").attr('class');
 
@@ -210,7 +209,25 @@ $(document).ready(function() {
         }
     })
 
+    var countingEls = [
+        {"id": "shopwarePerc", "from": 0, "to": 50, "timeMil": 2500}
+    ]
+
+    countingEls.forEach((el) => {
+        countingTo("#" + el.id, el.from, el.to, el.timeMil);
+    });
+
+    function countingTo(id, from, to, time) {
+        $(id).text("0")
+    }
+console.log(_calculateAge('20040611'))
 })
+
+function _calculateAge(birthday) { // birthday is a date
+    var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
 
 $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
@@ -228,4 +245,3 @@ function checkNavPos(scroll) {
         $('.navigation li').css('margin-right', "3rem")
     }
 }
-

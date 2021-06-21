@@ -1,1 +1,22 @@
-asd
+<div class="work-content work-content-all">
+    <h1>
+        My Work
+    </h1>
+    <hr>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+        {{#each work}}
+        <div class="col">
+            <div class="card">
+                <img src="{{this.slider}}" class="card-img-top" alt="{{this.url}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">{{this.desc}}</p>
+                    <a href="/work/{{this.url}}">
+                        <button class="btn btn-primary">Go To Page</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

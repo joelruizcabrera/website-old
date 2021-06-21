@@ -592,3 +592,67 @@ div[class^="sec-"] h1 {
 .anim-del-6 {
     animation-delay: 1.8s;
 }
+
+.work-content h1:first-child {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-family: 'Open Sans', cursive;
+    font-size: calc(3vw + 1rem);
+    letter-spacing: .5rem;
+    font-weight: 900;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+    color: transparent;
+}
+
+.work-content {
+    --cut-height: 4vw;
+    padding: 7vw 4vw;
+}
+
+.work-content.work-content-all .row .card {
+    border: none;
+    border-radius: 0;
+}
+
+.work-content.work-content-all .row .card .card-body{
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+}
+
+.work-content.work-content-all .row .card:hover .card-body {
+    opacity: 1;
+}
+
+.about-profile-img {
+    width: 100%;
+}
+
+.about-social-media ul,
+.about-social-media li {
+    display: inline;
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-social-media li:not(:first-child) {
+    padding-left: .7rem;
+}
+
+.about-social-media li a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about-social-media li a {
+    color: #fff;
+    font-size: 1.3rem;
+}
