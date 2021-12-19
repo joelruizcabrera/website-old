@@ -1,4 +1,0 @@
-::1 - - [27/May/2021:06:30:25 +0000] "GET / HTTP/1.1" 200 15175 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 OPR/76.0.4017.123"
-::1 - - [27/May/2021:06:30:25 +0000] "GET /assets/css/style.css HTTP/1.1" 200 9700 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 OPR/76.0.4017.123"
-::1 - - [27/May/2021:06:30:25 +0000] "GET /assets/js/main.js HTTP/1.1" 200 6527 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 OPR/76.0.4017.123"
-::1 - - [27/May/2021:06:30:25 +0000] "GET /assets/img/shopware6-certified-template-designer.png HTTP/1.1" 200 65007 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 OPR/76.0.4017.123"
